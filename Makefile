@@ -1,27 +1,60 @@
-.PHONY: install test lint format typecheck clean
+SHELL := /bin/bash
+ROOT := $(abspath $(dir $(lastword $(MAKEFILE_LIST))))
 
-install:
-	pip install -e '.[dev,server,crypto]'
-	pre-commit install
+.PHONY: bootstrap dev lint fmt typecheck test e2e coverage build package release update-deps security-scan sbom gen-docs migrate clean check docs
 
-test:
-	pytest -v --cov=ai_trust --cov-report=term-missing
+bootstrap:
+$(ROOT)/scripts/bootstrap $(ARGS)
+
+dev:
+$(ROOT)/scripts/dev $(ARGS)
 
 lint:
-	black --check .
-	isort --check-only .
-	ruff check .
+$(ROOT)/scripts/lint $(ARGS)
 
-format:
-	black .
-	isort .
+fmt:
+$(ROOT)/scripts/fmt $(ARGS)
 
 typecheck:
-	mypy .
+$(ROOT)/scripts/typecheck $(ARGS)
+
+test:
+$(ROOT)/scripts/test $(ARGS)
+
+e2e:
+$(ROOT)/scripts/e2e $(ARGS)
+
+coverage:
+$(ROOT)/scripts/coverage $(ARGS)
+
+build:
+$(ROOT)/scripts/build $(ARGS)
+
+package:
+$(ROOT)/scripts/package $(ARGS)
+
+release:
+$(ROOT)/scripts/release $(ARGS)
+
+update-deps:
+$(ROOT)/scripts/update-deps $(ARGS)
+
+security-scan:
+$(ROOT)/scripts/security-scan $(ARGS)
+
+sbom:
+$(ROOT)/scripts/sbom $(ARGS)
+
+gen-docs:
+$(ROOT)/scripts/gen-docs $(ARGS)
+
+docs: gen-docs
+
+migrate:
+$(ROOT)/scripts/migrate $(ARGS)
 
 clean:
-	find . -type d -name '__pycache__' -exec rm -r {} +
-	find . -type d -name '*.egg-info' -exec rm -r {} +
-	find . -type d -name '.pytest_cache' -exec rm -r {} +
-	find . -type d -name '.mypy_cache' -exec rm -r {} +
-	rm -rf build/ dist/ .coverage htmlcov/ .pytest_cache/ .ruff_cache/
+$(ROOT)/scripts/clean $(ARGS)
+
+check:
+$(ROOT)/scripts/check $(ARGS)

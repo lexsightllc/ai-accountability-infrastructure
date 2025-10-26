@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# shellcheck source=scripts/lib/common.sh
+source "${SCRIPT_DIR}/lib/common.sh"
+
+ensure_venv
+
+OUTPUT_DIR="${PROJECT_ROOT}/docs/_build/html"
+mkdir -p "${OUTPUT_DIR}"
+
+run_cmd sphinx-build -b html "${PROJECT_ROOT}/docs" "${OUTPUT_DIR}" "$@"

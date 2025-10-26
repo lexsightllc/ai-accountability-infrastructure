@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# shellcheck source=scripts/lib/common.sh
+source "${SCRIPT_DIR}/lib/common.sh"
+
+TARGETS=(
+  "${PROJECT_ROOT}/.pytest_cache"
+  "${PROJECT_ROOT}/.mypy_cache"
+  "${PROJECT_ROOT}/.ruff_cache"
+  "${PROJECT_ROOT}/build"
+  "${PROJECT_ROOT}/dist"
+  "${PROJECT_ROOT}/htmlcov"
+  "${PROJECT_ROOT}/coverage.xml"
+)
+
+for target in "${TARGETS[@]}"; do
+  if [[ -e "${target}" ]]; then
+    _log "Removing ${target}"
+    rm -rf "${target}"
+  fi
+done
+
+SBOM_DIR="${PROJECT_ROOT}/sbom"
+if [[ -d "${SBOM_DIR}" ]]; then
+  _log "Cleaning generated SBOM artifacts"
+  find "${SBOM_DIR}" -type f ! -name 'README.md' -delete
+fi

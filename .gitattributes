@@ -6,6 +6,7 @@
 
 # Force Windows line endings for batch files
 *.bat eol=crlf
+*.ps1 eol=crlf
 
 # Binary files
 *.png binary

@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# shellcheck source=scripts/lib/common.sh
+source "${SCRIPT_DIR}/lib/common.sh"
+
+ensure_python
+ensure_venv
+
+TAG="${TAG:-}" 
+
+run_cmd git fetch --tags
+
+_log "Building artifacts"
+run_python -m build
+
+_log "Validating distributions"
+run_python -m twine check dist/*
+
+if [[ -n "${TAG}" ]]; then
+  _log "Tagging release ${TAG}"
+  git tag -s "${TAG}" -m "${TAG}" || git tag "${TAG}" -m "${TAG}"
+fi
+
+if has_npm_script "release"; then
+  (cd "${PROJECT_ROOT}" && npm run release)
+fi

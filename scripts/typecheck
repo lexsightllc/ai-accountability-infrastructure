@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# shellcheck source=scripts/lib/common.sh
+source "${SCRIPT_DIR}/lib/common.sh"
+
+ensure_venv
+
+if [[ -n "${MYPY_ARGS:-}" ]]; then
+  # shellcheck disable=SC2206
+  MYPY_CMD=(mypy ${MYPY_ARGS})
+else
+  MYPY_CMD=(mypy src tests)
+fi
+MYPY_CMD+=("$@")
+
+run_cmd "${MYPY_CMD[@]}"
+
+if has_npm_script "typecheck"; then
+  (cd "${PROJECT_ROOT}" && npm run typecheck)
+fi

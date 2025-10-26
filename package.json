@@ -6,6 +6,6 @@
     "ajv": "^8.12.0"
   },
   "scripts": {
-    "test:schema": "node tests/js/test-schema.js"
+    "test:schema": "node tests/unit/js/receipt-schema.spec.js"
   }
 }
