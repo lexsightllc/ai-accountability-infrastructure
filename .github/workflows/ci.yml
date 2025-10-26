@@ -7,35 +7,57 @@ on:
     branches: [main]
 
 jobs:
-  test:
+  quality:
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
-        python-version: ["3.9", "3.10", "3.11"]
+        python-version: ["3.9", "3.11"]
 
     steps:
-    - uses: actions/checkout@v3
-    
-    - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v4
-      with:
-        python-version: ${{ matrix.python-version }}
-        
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -e '.[dev,server,crypto]'
-        
-    - name: Lint with ruff
-      run: ruff check .
-      
-    - name: Type checking with mypy
-      run: mypy src tests
-      
-    - name: Run tests
-      run: pytest
-      
-    - name: Check code formatting
-      run: |
-        black --check .
-        isort --check-only .
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+          cache-dependency-path: |
+            requirements-dev.txt
+            pyproject.toml
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: "npm"
+          cache-dependency-path: |
+            package-lock.json
+
+      - name: Bootstrap toolchain
+        env:
+          PIP_DISABLE_PIP_VERSION_CHECK: "1"
+        run: make bootstrap
+
+      - name: Run quality gates
+        env:
+          COVERAGE_THRESHOLD: 80
+        run: make check
+
+      - name: Upload coverage report
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: coverage-${{ matrix.python-version }}
+          path: |
+            coverage.xml
+            htmlcov/
+          if-no-files-found: ignore
+
+      - name: Upload SBOMs
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: sbom-${{ matrix.python-version }}
+          path: sbom/
+          if-no-files-found: ignore

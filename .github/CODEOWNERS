@@ -1,0 +1,5 @@
+# Require review from maintainers for critical paths
+* @AI-Trust-Team
+
+scripts/** @AI-Trust-Team
+.github/** @AI-Trust-Team

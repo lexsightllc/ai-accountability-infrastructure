@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# shellcheck source=scripts/lib/common.sh
+source "${SCRIPT_DIR}/lib/common.sh"
+
+_log "Running lint checks"
+"${SCRIPT_DIR}/lint"
+
+_log "Running type checks"
+"${SCRIPT_DIR}/typecheck"
+
+_log "Running unit tests"
+"${SCRIPT_DIR}/test"
+
+_log "Running coverage enforcement"
+"${SCRIPT_DIR}/coverage"
+
+_log "Running security scan"
+"${SCRIPT_DIR}/security-scan"
+
+_log "Generating SBOM"
+"${SCRIPT_DIR}/sbom"

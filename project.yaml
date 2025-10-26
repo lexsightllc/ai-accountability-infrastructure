@@ -1,0 +1,33 @@
+name: ai-accountability-infrastructure
+languages:
+  python:
+    version: "3.11"
+    requires: ">=3.9"
+    package_manager: pip
+    package_file: pyproject.toml
+    entrypoints:
+      cli: ai_trust.cli:main
+      api: ai_trust.api.main:app
+    typecheck: mypy --strict
+    lint: ruff, black, isort
+  node:
+    version: "18"
+    package_manager: npm
+    package_file: package.json
+    scripts:
+      schema-tests: npm run test:schema
+services:
+  - name: transparency-api
+    type: fastapi
+    entrypoint: scripts/dev
+    port: 8000
+    environment: .env.example
+metadata:
+  coverage_threshold: 80
+  migrations: none
+  notes:
+    - "Migrations are not yet implemented; see scripts/migrate for stub behavior."
+    - "End-to-end tests will be added under tests/e2e as scenarios are defined."
+owners:
+  - team: AI Trust Team
+    contact: team@aitrust.example.com

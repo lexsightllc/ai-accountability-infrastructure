@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# shellcheck source=scripts/lib/common.sh
+source "${SCRIPT_DIR}/lib/common.sh"
+
+ensure_venv
+
+PYTEST_CMD=(pytest)
+if [[ -n "${PYTEST_ARGS:-}" ]]; then
+  # shellcheck disable=SC2206
+  PYTEST_CMD+=(${PYTEST_ARGS})
+else
+  PYTEST_CMD+=(-v)
+fi
+PYTEST_CMD+=("$@")
+
+run_cmd "${PYTEST_CMD[@]}"
+
+if has_npm_script "test:schema"; then
+  (cd "${PROJECT_ROOT}" && npm run test:schema)
+fi

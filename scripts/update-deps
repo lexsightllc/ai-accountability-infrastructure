@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# shellcheck source=scripts/lib/common.sh
+source "${SCRIPT_DIR}/lib/common.sh"
+
+ensure_python
+ensure_venv
+
+_log "Updating Python dependencies via pip-compile"
+run_python -m piptools compile pyproject.toml --extra dev --extra server --extra crypto --extra docs -o requirements-dev.txt
+
+if [[ -f "${PROJECT_ROOT}/requirements.txt" ]]; then
+  run_python -m piptools compile pyproject.toml -o requirements.txt
+fi
+
+if has_npm_script "update-deps"; then
+  (cd "${PROJECT_ROOT}" && npm run update-deps)
+else
+  if [[ -f "${PROJECT_ROOT}/package-lock.json" ]]; then
+    _log "Updating npm dependencies"
+    (cd "${PROJECT_ROOT}" && npm update)
+  fi
+fi

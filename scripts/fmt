@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# shellcheck source=scripts/lib/common.sh
+source "${SCRIPT_DIR}/lib/common.sh"
+
+ensure_venv
+
+TARGETS=("$@")
+if [[ ${#TARGETS[@]} -eq 0 ]]; then
+  TARGETS=(".")
+fi
+
+if [[ -n "${RUFF_ARGS:-}" ]]; then
+  # shellcheck disable=SC2206
+  RUFF_TARGETS=(${RUFF_ARGS})
+else
+  RUFF_TARGETS=("${TARGETS[@]}")
+fi
+
+if [[ -n "${ISORT_ARGS:-}" ]]; then
+  # shellcheck disable=SC2206
+  ISORT_TARGETS=(${ISORT_ARGS})
+else
+  ISORT_TARGETS=("${TARGETS[@]}")
+fi
+
+if [[ -n "${BLACK_ARGS:-}" ]]; then
+  # shellcheck disable=SC2206
+  BLACK_TARGETS=(${BLACK_ARGS})
+else
+  BLACK_TARGETS=("${TARGETS[@]}")
+fi
+
+run_cmd ruff check "${RUFF_TARGETS[@]}" --fix
+run_cmd isort "${ISORT_TARGETS[@]}"
+run_cmd black "${BLACK_TARGETS[@]}"
+
+if has_npm_script "fmt"; then
+  (cd "${PROJECT_ROOT}" && npm run fmt)
+fi

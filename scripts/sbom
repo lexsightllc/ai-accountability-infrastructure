@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# shellcheck source=scripts/lib/common.sh
+source "${SCRIPT_DIR}/lib/common.sh"
+
+ensure_python
+ensure_venv
+
+OUTPUT_DIR="${PROJECT_ROOT}/sbom"
+mkdir -p "${OUTPUT_DIR}"
+
+_log "Generating Python SBOM"
+check_command cyclonedx-bom
+run_cmd cyclonedx-bom -o "${OUTPUT_DIR}/python-sbom.json" -F json -e "${PROJECT_ROOT}/requirements-dev.txt"
+
+if [[ -f "${PROJECT_ROOT}/package-lock.json" ]]; then
+  _log "Generating Node.js SBOM"
+  check_command npx
+  npx --yes @cyclonedx/cyclonedx-npm --output-file "${OUTPUT_DIR}/npm-sbom.json" --output-format json
+fi

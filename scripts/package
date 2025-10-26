@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# shellcheck source=scripts/lib/common.sh
+source "${SCRIPT_DIR}/lib/common.sh"
+
+ensure_python
+ensure_venv
+
+run_python -m build --wheel --sdist
+
+if has_npm_script "package"; then
+  (cd "${PROJECT_ROOT}" && npm run package)
+fi

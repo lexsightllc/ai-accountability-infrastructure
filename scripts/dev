@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# shellcheck source=scripts/lib/common.sh
+source "${SCRIPT_DIR}/lib/common.sh"
+
+ensure_python
+ensure_venv
+
+HOST="${HOST:-0.0.0.0}"
+PORT="${PORT:-8000}"
+APP_MODULE="${APP_MODULE:-ai_trust.api.main:app}"
+
+_log "Starting development server on ${HOST}:${PORT} (module ${APP_MODULE})"
+run_python -m uvicorn "${APP_MODULE}" --reload --host "${HOST}" --port "${PORT}"
