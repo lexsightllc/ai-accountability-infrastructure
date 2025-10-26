@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: MPL-2.0
 """Basic usage example for AI Trust."""
 from ai_trust import create_receipt, verify_receipt
 from ai_trust.core import KeyPair

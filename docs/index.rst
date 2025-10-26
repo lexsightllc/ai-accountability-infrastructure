@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: MPL-2.0
 .. AI Trust documentation master file
 
 Welcome to AI Trust's documentation!

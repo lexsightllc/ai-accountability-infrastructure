@@ -1,3 +1,5 @@
+<!-- SPDX-License-Identifier: MPL-2.0 -->
+
 # Project Structure
 
 This document outlines the organization of the AI Trust Infrastructure project.

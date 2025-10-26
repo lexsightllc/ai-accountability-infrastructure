@@ -1,3 +1,5 @@
+<!-- SPDX-License-Identifier: MPL-2.0 -->
+
 # AI Trust Infrastructure
 
 **End‑to‑end verifiable AI accountability**

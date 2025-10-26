@@ -1,6 +1,12 @@
+<!-- SPDX-License-Identifier: MPL-2.0 -->
+
 # Contributing to AI Trust
 
 Thank you for your interest in contributing to AI Trust! We welcome contributions from everyone.
+
+## Licensing Expectations
+
+By submitting a contribution, you agree that it will be licensed under the [Mozilla Public License 2.0 (MPL-2.0)](LICENSE). We operate under inbound=outbound terms: we accept only contributions that you are able to license under MPL-2.0, and we will distribute those contributions under the same license. Please ensure that any third-party code you include retains its original license and associated notices in accordance with the repository [NOTICE](NOTICE) and [THIRD_PARTY_NOTICES](THIRD_PARTY_NOTICES.md).
 
 ## How to Contribute
 

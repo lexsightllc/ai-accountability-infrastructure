@@ -1,3 +1,5 @@
+<!-- SPDX-License-Identifier: MPL-2.0 -->
+
 # AI Trust - Quick Start Guide
 
 This guide will help you get started with the AI Trust project quickly.

@@ -1,3 +1,5 @@
+<!-- SPDX-License-Identifier: MPL-2.0 -->
+
 # Contributors
 
 We would like to thank all the contributors who have helped make AI Trust better:

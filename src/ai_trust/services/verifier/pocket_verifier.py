@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: MPL-2.0
 """Minimal offline verifier for AI Trust receipts."""
 import argparse, base64, json, struct, hashlib, sys, unicodedata
 from datetime import datetime, timezone

@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: MPL-2.0
 """Pocket verifier unit tests."""
 
 from __future__ import annotations

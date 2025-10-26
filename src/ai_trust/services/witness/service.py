@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: MPL-2.0
 """Witness Service
 
 Monitors and verifies transparency logs, co-signing tree heads to ensure their integrity.

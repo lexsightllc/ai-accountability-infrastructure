@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: MPL-2.0
 name: validate-events
 on: [push, pull_request]
 jobs:

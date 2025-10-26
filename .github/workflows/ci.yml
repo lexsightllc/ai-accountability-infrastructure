@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: MPL-2.0
 name: CI
 
 on:
@@ -61,3 +62,30 @@ jobs:
           name: sbom-${{ matrix.python-version }}
           path: sbom/
           if-no-files-found: ignore
+
+  license-hygiene:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run ScanCode Toolkit
+        uses: nexB/scancode-toolkit-action@v30.1.0
+        with:
+          scan-options: "--copyright --license --info --json-pp scancode-report.json"
+
+      - name: Upload license scan report
+        uses: actions/upload-artifact@v3
+        with:
+          name: scancode-report
+          path: scancode-report.json
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+
+      - name: Install REUSE tooling
+        run: pip install reuse
+
+      - name: Verify SPDX compliance
+        run: reuse lint

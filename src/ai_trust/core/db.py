@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: MPL-2.0
 """
 Database module for the transparency log using SQLite.
 

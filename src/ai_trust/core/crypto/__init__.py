@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: MPL-2.0
 """Cryptographic primitives and helpers for AI Trust.
 
 This module provides a minimal Ed25519 wrapper used throughout the project.

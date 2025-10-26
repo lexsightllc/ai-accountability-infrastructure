@@ -1,3 +1,5 @@
+<!-- SPDX-License-Identifier: MPL-2.0 -->
+
 # Keys Directory
 
 This directory contains cryptographic keys used by the AI Trust system.

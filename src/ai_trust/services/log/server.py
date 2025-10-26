@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: MPL-2.0
 """Transparency Log Service
 
 Implements an append-only Merkle tree for storing and verifying log entries.

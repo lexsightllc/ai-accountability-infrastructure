@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: MPL-2.0
 """
 Performance tests for the Merkle tree implementation.
 

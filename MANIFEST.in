@@ -1,4 +1,6 @@
 include LICENSE
+include NOTICE
+include THIRD_PARTY_NOTICES.md
 include README.md
 include pyproject.toml
 include pytest.ini

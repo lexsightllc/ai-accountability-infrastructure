@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: MPL-2.0
 """Tests for the AI Receipt Verifier."""
 
 from __future__ import annotations

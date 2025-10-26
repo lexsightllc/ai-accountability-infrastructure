@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: MPL-2.0
 """Main CLI entry point."""
 import click
 

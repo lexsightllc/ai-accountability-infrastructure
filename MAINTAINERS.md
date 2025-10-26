@@ -1,3 +1,5 @@
+<!-- SPDX-License-Identifier: MPL-2.0 -->
+
 # Maintainers
 
 This file lists the current maintainers of the AI Trust project.

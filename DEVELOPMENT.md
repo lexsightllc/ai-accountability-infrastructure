@@ -1,3 +1,5 @@
+<!-- SPDX-License-Identifier: MPL-2.0 -->
+
 # Development Guide
 
 This guide provides information for developers working on the AI Trust project.

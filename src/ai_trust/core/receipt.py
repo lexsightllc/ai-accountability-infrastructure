@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: MPL-2.0
 """Receipt creation and verification."""
 from datetime import datetime, timezone
 from typing import Any, Optional

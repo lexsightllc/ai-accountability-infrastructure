@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: MPL-2.0
 # Configuration file for the Sphinx documentation builder.
 from datetime import datetime
 

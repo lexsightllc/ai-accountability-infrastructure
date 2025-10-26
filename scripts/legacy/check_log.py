@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: MPL-2.0
 """
 Check the status of an AI Accountability Transparency Log.
 

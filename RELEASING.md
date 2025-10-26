@@ -1,3 +1,5 @@
+<!-- SPDX-License-Identifier: MPL-2.0 -->
+
 # Release Process
 
 This document outlines the process for releasing a new version of AI Trust.

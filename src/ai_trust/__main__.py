@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: MPL-2.0
 """
 AI Trust - Main entry point for the CLI.
 

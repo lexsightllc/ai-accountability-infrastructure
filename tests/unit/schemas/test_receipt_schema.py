@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: MPL-2.0
 """Conformance tests for receipt-v1 JSON schema."""
 
 from __future__ import annotations

@@ -1,3 +1,5 @@
+<!-- SPDX-License-Identifier: MPL-2.0 -->
+
 # Installation Guide
 
 This guide will help you install and set up AI Trust on your system.

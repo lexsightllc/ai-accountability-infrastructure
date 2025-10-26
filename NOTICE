@@ -1,6 +1,29 @@
-AI Trust
-Copyright 2023 The AI Trust Authors
+# SPDX-License-Identifier: MPL-2.0
 
-This product includes software developed by The AI Trust Authors (https://github.com/your-org/ai-trust).
+# AI Trust Infrastructure NOTICE
 
-This project includes third-party software components, which are licensed under their own terms. See the NOTICE file in the source distribution for more information.
+ProjectName © 2025 Augusto 'Guto' Ochoa Ughini
+
+This project, AI Trust Infrastructure, is distributed under the Mozilla Public License 2.0 (MPL-2.0). A copy of the license is available in the accompanying [LICENSE](LICENSE) file.
+
+## Distribution Requirements
+
+When redistributing this software, please ensure that:
+
+1. The MPL-2.0 license text is provided alongside the distribution.
+2. This NOTICE file is included verbatim.
+3. Third-party notices listed in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) are preserved with their original wording.
+
+## Third-Party Components
+
+This product bundles and depends upon third-party open-source components. Their respective licenses and notices are detailed in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). Key ecosystems include:
+
+- **Python packages** declared in `pyproject.toml`, `requirements.txt`, and related dependency lockfiles.
+- **Node.js packages** vendored under `node_modules/` via `package-lock.json`.
+- **Documentation tooling** as declared in `docs/` and build configuration files.
+
+Each component remains under its original license. Compliance with redistribution requirements for those licenses is the responsibility of downstream users.
+
+## Trademarks
+
+AI Trust Infrastructure, its visual assets, and logos are trademarks of their respective owners. MPL-2.0 grants no trademark license.
