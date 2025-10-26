@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: MPL-2.0
 """
 Verification Module for AI Trust Infrastructure
 

@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: MPL-2.0
 repos:
 -   repo: https://github.com/psf/black
     rev: 23.7.0
@@ -19,3 +20,10 @@ repos:
     hooks:
     -   id: mypy
         additional_dependencies: [types-requests, types-python-dateutil]
+-   repo: local
+    hooks:
+    -   id: ensure-spdx-headers
+        name: Ensure SPDX headers
+        entry: python tools/add_spdx_headers.py
+        language: system
+        pass_filenames: true

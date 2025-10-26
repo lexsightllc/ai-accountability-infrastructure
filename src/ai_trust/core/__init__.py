@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: MPL-2.0
 """Core functionality for AI Trust."""
 from ai_trust.core.canonicalization import canonicalize
 from ai_trust.core.crypto import KeyPair, create_keypair, sign, verify_signature

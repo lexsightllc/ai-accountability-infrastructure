@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: MPL-2.0
 """Schema validation tests for gatekeeper events."""
 
 from __future__ import annotations

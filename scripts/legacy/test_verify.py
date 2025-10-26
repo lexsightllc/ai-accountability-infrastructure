@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: MPL-2.0
 import json
 from ai_trust.core.crypto import verify_receipt, KeyPair
 from ai_trust.core.models import Receipt

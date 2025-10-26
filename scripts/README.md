@@ -1,3 +1,5 @@
+<!-- SPDX-License-Identifier: MPL-2.0 -->
+
 # Script Toolbelt
 
 The executable scripts in this directory provide a consistent developer

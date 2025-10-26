@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: MPL-2.0
 """Data models for AI Trust."""
 from dataclasses import dataclass, field
 from datetime import datetime

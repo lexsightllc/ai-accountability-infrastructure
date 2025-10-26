@@ -1,3 +1,5 @@
+<!-- SPDX-License-Identifier: MPL-2.0 -->
+
 # AI Trust Infrastructure
 
 A framework for transparent and verifiable AI operations.
@@ -43,4 +45,6 @@ make check
 
 ## License
 
-Apache 2.0
+AI Trust Infrastructure is licensed under the [Mozilla Public License 2.0 (MPL-2.0)](LICENSE). All files carrying the MPL-2.0 SPDX identifier must remain available under the MPL-2.0 when you redistribute modifications. You may combine the software with proprietary components, provided the MPL-covered files (and any changes to them) stay under MPL-2.0 and you make their source available under the same terms.
+
+Refer to the project [NOTICE](NOTICE) and [THIRD_PARTY_NOTICES](THIRD_PARTY_NOTICES.md) documents for attribution requirements and third-party license details.

@@ -1,3 +1,5 @@
+<!-- SPDX-License-Identifier: MPL-2.0 -->
+
 # AI Receipt Verifier
 
 The AI Receipt Verifier is a Python module for validating AI Trust receipts according to the AI Trust Standard v1.0.

@@ -1,3 +1,5 @@
+<!-- SPDX-License-Identifier: MPL-2.0 -->
+
 # Security Audit: AI Trust Infrastructure
 
 This document outlines the security audit of the AI Trust Infrastructure, focusing on cryptographic operations, data integrity, and potential vulnerabilities.

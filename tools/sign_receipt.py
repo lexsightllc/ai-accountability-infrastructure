@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: MPL-2.0
 """
 Sign an AI accountability receipt with an Ed25519 private key.
 

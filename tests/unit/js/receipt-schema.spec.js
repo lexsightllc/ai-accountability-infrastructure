@@ -1,3 +1,5 @@
+/* SPDX-License-Identifier: MPL-2.0 */
+
 import fs from 'fs';
 import path from 'path';
 import {fileURLToPath} from 'url';

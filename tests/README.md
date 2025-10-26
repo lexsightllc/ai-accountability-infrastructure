@@ -1,3 +1,5 @@
+<!-- SPDX-License-Identifier: MPL-2.0 -->
+
 # Test Layout
 
 - `tests/unit` mirrors the Python package structure under `src/`.

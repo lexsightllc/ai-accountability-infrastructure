@@ -1,3 +1,5 @@
+<!-- SPDX-License-Identifier: MPL-2.0 -->
+
 # Maintainer's Guide
 
 This guide is for maintainers of the AI Trust project.

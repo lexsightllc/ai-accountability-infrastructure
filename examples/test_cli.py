@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: MPL-2.0
 """
 Test script for the AI Trust CLI.
 

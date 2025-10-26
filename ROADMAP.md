@@ -1,3 +1,5 @@
+<!-- SPDX-License-Identifier: MPL-2.0 -->
+
 # AI Trust Roadmap
 
 This document outlines the development roadmap for AI Trust.
@@ -40,4 +42,4 @@ We use [Semantic Versioning](https://semver.org/) for version numbers.
 
 ## License
 
-This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the Mozilla Public License 2.0 (MPL-2.0) — see the [LICENSE](LICENSE) file for details and review attribution guidance in the [NOTICE](NOTICE).

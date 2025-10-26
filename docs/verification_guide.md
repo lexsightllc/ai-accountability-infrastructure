@@ -1,3 +1,5 @@
+<!-- SPDX-License-Identifier: MPL-2.0 -->
+
 # AI Trust Verification Guide
 
 This guide provides comprehensive documentation for the AI Trust verification system, including usage examples, API reference, and best practices.

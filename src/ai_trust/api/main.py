@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: MPL-2.0
 """FastAPI application for AI Trust API."""
 
 from fastapi import FastAPI

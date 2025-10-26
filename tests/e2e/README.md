@@ -1,3 +1,5 @@
+<!-- SPDX-License-Identifier: MPL-2.0 -->
+
 # End-to-End Tests
 
 Add behavior-driven end-to-end tests here. Use Given/When/Then comments to

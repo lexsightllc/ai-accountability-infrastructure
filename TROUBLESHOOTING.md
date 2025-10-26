@@ -1,3 +1,5 @@
+<!-- SPDX-License-Identifier: MPL-2.0 -->
+
 # Troubleshooting Guide
 
 This guide provides solutions to common issues you might encounter while using or developing AI Trust.

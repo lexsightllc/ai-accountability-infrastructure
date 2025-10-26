@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: MPL-2.0
 """
 CLI command implementations for AI Trust.
 """

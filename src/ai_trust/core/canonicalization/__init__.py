@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: MPL-2.0
 """Canonicalization utilities following JSON Canonicalization Scheme (RFC 8785)."""
 
 from __future__ import annotations

@@ -1,3 +1,5 @@
+<!-- SPDX-License-Identifier: MPL-2.0 -->
+
 # Legacy Utilities
 
 These scripts pre-date the standardized toolbelt and are kept for
