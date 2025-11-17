@@ -6,6 +6,7 @@ This module provides functionality to verify receipts and their inclusion in the
 Merkle tree, ensuring data integrity and trust.
 """
 
+import base64
 import json
 import hashlib
 from dataclasses import dataclass, asdict
