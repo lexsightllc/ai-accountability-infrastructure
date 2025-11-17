@@ -1,6 +1,12 @@
+# SPDX-License-Identifier: MPL-2.0
 # Git
 .git
 .gitignore
+.gitattributes
+
+# CI/CD
+.github
+.gitlab-ci.yml
 
 # Python
 __pycache__/
@@ -23,23 +29,28 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+MANIFEST
 
 # Virtual Environment
 .venv
 venv/
 ENV/
+env/
 
 # Project specific
 keys/
 data/
 logs/
 .env
+.env.local
+.env.*.local
 
 # IDE
 .vscode/
 .idea/
 *.swp
 *.swo
+*~
 
 # OS generated files
 .DS_Store
@@ -55,3 +66,24 @@ Thumbs.db
 htmlcov/
 .pytest_cache/
 mypy_cache/
+.tox/
+coverage.xml
+*.cover
+.hypothesis/
+
+# Documentation
+docs/_build/
+*.md
+!README.md
+
+# SBOM and reports
+sbom/
+scancode-report.json
+
+# Logs
+*.log
+
+# Temporary files
+tmp/
+temp/
+*.tmp
